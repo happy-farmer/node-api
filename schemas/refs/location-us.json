@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Location based on US address",
+  "type": "object",
+  "properties": {
+    "street-address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "postal-code": {
+      "type": "integer"
+    },
+    "geo": {
+      "$ref": "/refs/geo.json"
+    }
+  },
+  "required": ["street-address", "city", "state"]
+}

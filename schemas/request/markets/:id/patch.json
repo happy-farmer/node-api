@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "/refs/asset.json"
+    },
+    {
+      "properties": {
+        "farmerList": {
+          "type": "array"
+        }
+      }
+    }
+  ]
+}

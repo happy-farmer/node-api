@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Search query params",
+    "type": "object",
+    "properties": {
+        "match": { "type": "string" },
+        "zip": { "type": "number" }
+    }
+}

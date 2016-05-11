@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "/refs/asset.json"
+    },
+    {
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "farmerList": {
+          "type": "array"
+        }
+      }
+    }
+  ],
+  "required": ["_id", "name", "location"]
+}

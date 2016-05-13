@@ -2,7 +2,10 @@ var debug = require('debug')('happyfarmerapi:app')
 
 var app = require('express')()
 var bodyParser = require('body-parser')
+var cors = require('cors')
+
 app.use(bodyParser.json())
+app.use(cors())
 
 debug('loading...')
 // Figuring out schema path for validation

@@ -1,4 +1,4 @@
-var debug = require('debug')('happyfarmerapi:app')
+var debug = require('debug')('api:app')
 
 var app = require('express')()
 var bodyParser = require('body-parser')
@@ -21,6 +21,7 @@ debug('routes OK')
 
 // Catching up whatever
 app.use(
+  require('./error-handler').catchAll404,
   require('./error-handler').catchAll
 )
 

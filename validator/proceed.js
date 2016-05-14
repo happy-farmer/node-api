@@ -2,7 +2,7 @@
  * Pipleline after request or response
  *
  */
-var debug = require('debug')('happyfarmerapi:validator:proceed')
+var debug = require('debug')('api:validator:proceed')
 
 module.exports = (req, res, next, rest) => {
   var uri = rest.type + ' ' + req.method + ' ' + req.url

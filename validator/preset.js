@@ -1,4 +1,4 @@
-var debug = require('debug')('happyfarmerapi:validator:preset')
+var debug = require('debug')('api:validator:preset')
 
 var express = require('express')
 var router = express.Router()

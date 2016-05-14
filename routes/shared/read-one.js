@@ -1,4 +1,4 @@
-var debug = require('debug')('happyfarmerapi:routes:shared:read')
+var debug = require('debug')('api:routes:shared:read')
 var cwd = process.cwd()
 var db = require(cwd + '/dbm')
 var errorDbmRead = require(cwd + '/error-handler').dbmRead

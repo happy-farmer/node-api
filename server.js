@@ -1,4 +1,4 @@
-var debug = require('debug')('happyfarmerapi:server')
+var debug = require('debug')('api:server')
 var dbm = require('./dbm')
 
 var DBURL = process.env.DBURL

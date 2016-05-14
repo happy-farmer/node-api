@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient
-var debug = require('debug')('happyfarmerapi:dbm')
+var debug = require('debug')('api:dbm')
 
 var state = {
   db: null

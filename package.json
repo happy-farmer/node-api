@@ -4,7 +4,7 @@
   "description": "Draft api for happy farmers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./tasks/test.sh",
     "start": "nf start web",
     "develop": "./tasks/develop.sh"
   },
@@ -16,7 +16,10 @@
     "express": "4.13.4",
     "foreman": "1.4.1",
     "json-api-validator": "1.0.0",
-    "mongodb": "2.1.15"
+    "lodash": "4.12.0",
+    "mongodb": "2.1.15",
+    "supertest": "1.2.0",
+    "tape": "4.5.1"
   },
   "devDependencies": {
     "debug": "2.2.0",

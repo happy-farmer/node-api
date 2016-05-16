@@ -6,7 +6,7 @@
     },
     {
       "properties": {
-        "marketList": {
+        "marketsList": {
           "type": "array"
         }
       }

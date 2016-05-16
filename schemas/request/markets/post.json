@@ -6,7 +6,7 @@
     },
     {
       "properties": {
-        "farmerList": {
+        "farmersList": {
           "type": "array"
         }
       }

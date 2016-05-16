@@ -1,6 +1,7 @@
 var debug = require('debug')('api:routes:shared:read')
 var cwd = process.cwd()
 var db = require(cwd + '/dbm')
+var _ = require('lodash')
 
 module.exports = (collection, queryConstructor) => {
   return (req, res, next) => {
@@ -13,8 +14,8 @@ module.exports = (collection, queryConstructor) => {
           // do error catch
         } else {
           if (doc) {
-            doc._id = doc._id.toJSON()
-            data.push(doc)
+            doc.id = doc._id.toJSON()
+            data.push(_.omit(doc, ['_id']))
           } else {
             res.locals.responseData = data
             next()

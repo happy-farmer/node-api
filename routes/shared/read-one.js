@@ -3,6 +3,7 @@ var cwd = process.cwd()
 var db = require(cwd + '/dbm')
 var errorDbmRead = require(cwd + '/error-handler').dbmRead
 var errorNotFound = require(cwd + '/error-handler').notFound
+var _ = require('lodash')
 
 module.exports = (collection, queryConstructor) => {
   return (req, res, next) => {
@@ -16,8 +17,8 @@ module.exports = (collection, queryConstructor) => {
           if (!doc) {
             errorNotFound({}, req, res, next)
           } else {
-            doc._id = doc._id.toJSON()
-            res.locals.responseData = doc
+            doc.id = doc._id.toJSON()
+            res.locals.responseData = _.omit(doc, ['_id'])
             next()
           }
         }

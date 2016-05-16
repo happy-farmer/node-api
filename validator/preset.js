@@ -6,7 +6,7 @@ var router = express.Router()
 var buildSchemaPath = (res, reqPath) => {
   if (!res.locals.schemaPath) {
     var method = res.req.method.toLowerCase()
-    var fullPath = (reqPath || res.req.url) + '/' + method + '.json'
+    var fullPath = (reqPath || res.req.url) + '/' + method
     res.locals.schemaPath = fullPath
   }
 }

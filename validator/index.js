@@ -6,7 +6,7 @@ var validator = require('json-api-validator')({
 })
 
 var main = (json, schemaPath) => {
-  var result = validator(json, path.resolve(schemaPath))
+  var result = validator(json, path.resolve(schemaPath + '.json'))
   if (result.errors.length) result.error = result.errors[0]
   return result
 }

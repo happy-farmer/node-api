@@ -39,28 +39,26 @@ module.exports = {
     debug('404 error occured')
     next(err, req, res, next)
   },
-  catchAll: (err, req, res, next) => {
-    var statusMessage = err.statusMessage || 'catch all stage'
-    var status = err.status || 500
-    var technicalMessage = err.technicalMessage || err.message
-    res.status(status)
-
-    debug('catch all error occured')
-
-    res.json({
-      status,
-      statusMessage,
-      technicalMessage
-    })
-  },
   // 501 is new 404
   catchAll404: (req, res, next) => {
     var statusMessage = 'Not implemented'
     var status = 501
     var technicalMessage = 'catch 404 all stage'
-    res.status(status)
 
     debug('catch all 404 to 501 error occured')
+
+    var err = {
+      statusMessage,
+      status,
+      technicalMessage
+    }
+    next(err, req, res, next)
+  },
+  catchAll: (err, req, res, next) => {
+    var statusMessage = err.statusMessage || 'catch all stage'
+    var status = err.status || 500
+    var technicalMessage = err.technicalMessage || err.message
+    res.status(status)
 
     res.json({
       status,

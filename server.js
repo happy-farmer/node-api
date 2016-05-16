@@ -4,14 +4,13 @@ var dbm = require('./dbm')
 var DBURL = process.env.DBURL
 var PORT = process.env.PORT || 3000
 var IP = process.env.IP || '0.0.0.0'
+var app = require('./app')
 
-debug('starting server...')
 dbm.connect(DBURL)
 .then(
   (db) => {
-    var app = require('./app')
+    debug('starting server...')
     var server = app.listen(PORT, IP, () => debug(`server runs on ${IP}:${PORT}`))
-
     if (!process.env.DEBUG) {
       var shutdown = () => {
         dbm.close()
@@ -28,3 +27,5 @@ dbm.connect(DBURL)
     throw new Error(err)
   }
 )
+
+module.exports = app

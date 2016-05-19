@@ -14,7 +14,7 @@ module.exports = (req, res, next) => {
   }
   updateOneFrom('markets', data, query)
   .then((doc) => {
-    var id = query._id
+    var id = req.params.id
     res.locals.responseData = {
       id
     }

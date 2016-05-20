@@ -6,14 +6,10 @@
     },
     {
       "properties": {
-        "id": {
-          "type": "string"
-        },
         "farmersList": {
           "type": "array"
         }
       }
     }
-  ],
-  "required": ["id"]
+  ]
 }

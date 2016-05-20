@@ -6,14 +6,10 @@
     },
     {
       "properties": {
-        "id": {
-          "type": "string"
-        },
         "marketsList": {
           "type": "array"
         }
       }
     }
-  ],
-  "required": ["id"]
+  ]
 }

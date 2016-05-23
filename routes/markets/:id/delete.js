@@ -11,11 +11,10 @@ module.exports = (req, res, next) => {
   var query = {
     _id: ObjectId(req.params.id)
   }
-  var data = {}
-  data.meta = {
-    deleted: new Date()
+  var update = {
+    $set: {'meta.deleted': new Date()}
   }
-  updateOneFrom('markets', data, query)
+  updateOneFrom('markets', query, update)
   .then((doc) => {
     var id = req.params.id
     res.locals.responseData = {

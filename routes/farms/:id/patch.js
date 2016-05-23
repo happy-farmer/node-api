@@ -1,17 +1,25 @@
+/**
+ * @module routes/farms/:id/patch
+ * @descriptin Updates item
+ */
+
 var updateOneFrom = require(process.cwd() + '/routes/shared/update-one')
 var ObjectId = require('mongodb').ObjectId
 var cwd = process.cwd()
 var dbmWriteError = require(cwd + '/error-handler').dbmWrite
+var flat = require('flat')
 
 module.exports = (req, res, next) => {
   var query = {
     _id: ObjectId(req.params.id)
   }
   var data = req.body
-  data.meta = {
-    updated: new Date()
+  var $set = flat(data)
+  $set['meta.updated'] = new Date()
+  var update = {
+    $set
   }
-  updateOneFrom('farms', data, query)
+  updateOneFrom('farms', query, update)
   .then((doc) => {
     var id = req.params.id
     res.locals.responseData = {

@@ -1,4 +1,3 @@
-'use strict'
 var updateOneFrom = require(process.cwd() + '/routes/shared/update-one')
 var ObjectId = require('mongodb').ObjectId
 var cwd = process.cwd()

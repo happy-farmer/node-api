@@ -13,6 +13,13 @@ module.exports = {
     }
     next(err, req, res, next)
   },
+  wrongObjectId (err, req, res, next) {
+    err.statusMessage = 'wrong id format'
+    err.technicalMessage = err.text
+    err.status = 400
+    debug('preset error occured')
+    next(err, req, res, next)
+  },
   validationResponse: (err, req, res, next) => {
     err.statusMessage = 'not valid response'
     err.technicalMessage = err.error.message

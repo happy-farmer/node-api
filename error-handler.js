@@ -6,7 +6,7 @@ module.exports = {
     debug('validation request error occured')
     if (err.valid !== null) {
       err.statusMessage = 'not valid request'
-      err.status = 422
+      err.status = 400
     } else {
       err.statusMessage = 'not found validation schema'
       err.status = 501

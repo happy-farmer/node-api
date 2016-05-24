@@ -2,8 +2,7 @@
 var readOneFrom = require(process.cwd() + '/routes/shared/read-one')
 var ObjectId = require('mongodb').ObjectId
 var cwd = process.cwd()
-var errorDbmRead = require(cwd + '/error-handler').dbmRead
-var errorNotFound = require(cwd + '/error-handler').notFound
+var error = require(cwd + '/error-handler')
 var _ = require('lodash')
 
 module.exports = (req, res, next) => {
@@ -13,7 +12,7 @@ module.exports = (req, res, next) => {
   readOneFrom('farms', query)
   .then((doc) => {
     if (!doc) {
-      errorNotFound({}, req, res, next)
+      error.notFound({}, req, res, next)
     } else {
       doc.id = doc._id.toJSON()
       res.locals.responseData = _.omit(doc, ['_id'])
@@ -21,7 +20,7 @@ module.exports = (req, res, next) => {
     }
   })
   .catch((err) => {
-    errorDbmRead(err, req, res, next)
+    error.dbmRead(err, req, res, next)
   })
 }
 

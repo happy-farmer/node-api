@@ -1,9 +1,12 @@
+/**
+ * @module dbm
+ * @description Singletone to manage mongodb connection
+ */
+
 var MongoClient = require('mongodb').MongoClient
 var debug = require('debug')('api:dbm')
 
-var state = {
-  db: null
-}
+var state = {}
 
 module.exports = {
   connect: (url) => new Promise(function (resolve, reject) {
@@ -25,7 +28,6 @@ module.exports = {
   close: () => {
     debug('closing database connection...')
     state.db.close()
-    state.db = null
   },
   get: (col) => state.db.collection(col)
 }

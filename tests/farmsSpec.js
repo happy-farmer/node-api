@@ -67,6 +67,22 @@ app.then((server) => {
             })
         })
 
+        test(`DELETE /farms/${id}`, (t) => {
+          t.plan(2)
+
+          request(server)
+            .delete(`/farms/${id}`)
+            .expect('Content-Type', /json/)
+            .expect(202)
+            .end((err, res) => {
+              var body = res.body
+              t.error(err, 'no errors expected')
+
+              var msg = validate.response(body, '/farms/:id/delete')
+              t.ok(msg.valid, 'has to be valid against schema')
+            })
+        })
+
         t.end()
       })
   })

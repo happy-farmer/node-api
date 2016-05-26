@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./tasks/test.sh",
+    "posttest": "./tasks/test-teardown.mongo",
     "start": "nf start web",
     "develop": "./tasks/develop.sh"
   },

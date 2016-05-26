@@ -6,27 +6,21 @@ Search for appropriate schemas (`get.json`, `patch.json`, `post.json` etc.) in r
 
 ### Market
 
-- POST  /v1/markets
-- GET   /v1/markets
-
-- GET   /v1/markets/:id
-- PATCH /v1/markets/:id
-- DELETE /v1/markets/:id
-
-- POST  /v1/markets/list
-
+- POST  /markets
+- GET   /markets
+- GET   /markets/:id
+- PATCH /markets/:id
+- DELETE /markets/:id
+- POST  /markets/list
 
 ### Farm
 
-- POST  /v1/farms
-- GET   /v1/farms
-
-- GET   /v1/farms/:id
-- PATCH /v1/farms/:id
-- DELETE /v1/farms/:id
-
-- POST  /v1/farms/list
-
+- POST  /farms
+- GET   /farms
+- GET   /farms/:id
+- PATCH /farms/:id
+- DELETE /farms/:id
+- POST  /farms/list
 
 # Subtree routine
 
@@ -40,7 +34,6 @@ Use this repo as manual [subtree][medium-post].
 - `git merge -s subtree --squash schemas/master`
 - Or `git merge -X subtree=schemas --squash schemas/master` if things went [wrong][offical-docs].
 - `git commit -m "Updated schemas from subtree"`
-
 
 ## Updating a subtree in-place in the container
 

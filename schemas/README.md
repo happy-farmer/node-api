@@ -1,30 +1,36 @@
-# Initial API
+> Schemas for API, Database and everything that can be validated.
 
-Suggested usage for api validation is using this repo as manual [subtree] [medium-post].
+## API
 
-## Market
+Search for appropriate schemas (`get.json`, `patch.json`, `post.json` etc.) in request/response folders
 
-- GET   /v1/markets/?{search-query}
+### Market
+
+- POST  /v1/markets
+- GET   /v1/markets
+
 - GET   /v1/markets/:id
-
-- PATCH /v1/markets/list
-- PATCH /v1/markets/
+- PATCH /v1/markets/:id
+- DELETE /v1/markets/:id
 
 - POST  /v1/markets/list
-- POST  /v1/markets
 
-## Farm
 
-- GET   /v1/farms/?{search-query}
+### Farm
+
+- POST  /v1/farms
+- GET   /v1/farms
+
 - GET   /v1/farms/:id
-
-- PATCH /v1/farms/list
-- PATCH /v1/farms/
+- PATCH /v1/farms/:id
+- DELETE /v1/farms/:id
 
 - POST  /v1/farms/list
-- POST  /v1/farms
+
 
 # Subtree routine
+
+Use this repo as manual [subtree][medium-post].
 
 ## Getting an update from the subtree’s remote
 

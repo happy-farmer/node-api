@@ -2,7 +2,7 @@
 
 > NodeJs based API service
 
-Implementation of related part from [schemas](/schemas/README.md).
+Implementation related [schemas](/schemas/README.md) part.
 
 ### Market
 

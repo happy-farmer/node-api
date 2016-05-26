@@ -1,0 +1,5 @@
+#!/usr/bin/env mongo
+
+var db = new Mongo().getDB("test_api_test")
+db.dropDatabase()
+print('Droping testing database... bye bye')

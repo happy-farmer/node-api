@@ -28,7 +28,7 @@ app.then((server) => {
     t.plan(2)
 
     var item = {
-      'name': 'name',
+      'name': 'name Z',
       'location': {
         'street-address': 'SOME str 123',
         'city': 'San Francisco',

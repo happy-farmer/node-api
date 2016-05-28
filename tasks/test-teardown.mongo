@@ -1,5 +1,5 @@
 #!/usr/bin/env mongo
-
-var db = new Mongo().getDB("test_api_test")
+/* global Mongo print */
+var db = new Mongo().getDB('api_run_test')
 db.dropDatabase()
 print('Droping testing database... bye bye')

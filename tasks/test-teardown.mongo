@@ -2,4 +2,4 @@
 /* global Mongo print */
 var db = new Mongo().getDB('api_run_test')
 db.dropDatabase()
-print('Droping testing database... bye bye')
+print('Droping testing database... see ya')

@@ -1,4 +1,4 @@
-# node-api
+# node-api [![Build Status](https://travis-ci.org/happy-farmer/node-api.svg?branch=master)](https://travis-ci.org/happy-farmer/node-api)
 
 > NodeJs based API service
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -x
+#!/usr/bin/env bash
 
 APP_ENV_VARS=$(cat .env)
 env $APP_ENV_VARS supervisor "$@" server.js

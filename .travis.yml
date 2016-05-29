@@ -7,6 +7,4 @@ addons:
     - mongodb-3.0-precise
     packages:
     - mongodb-org-server
-cache:
-  directories:
-  - node_modules
+

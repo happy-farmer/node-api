@@ -4,9 +4,12 @@ var validator = require('json-api-validator')({
   formats: require('./formats/all'),
   globPattern: '/*/**'
 })
+var debug = require('debug')('api:validator:index')
 
 var main = (json, schemaPath) => {
-  var result = validator(json, path.resolve(schemaPath + '.json'))
+  var jsonPath = path.resolve(schemaPath + '.json')
+  debug(`json path: ${jsonPath}`)
+  var result = validator(json, jsonPath)
   if (result.errors.length) result.error = result.errors[0]
   return result
 }
